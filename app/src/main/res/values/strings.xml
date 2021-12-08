@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MyStory</string>
+    <string name="HintUserName">UserName</string>
+    <string name="HintPass">Password</string>
+    <string name="ButtonText">Login</string>
+    <string name="checkText">I accept terms and condition</string>
 </resources>

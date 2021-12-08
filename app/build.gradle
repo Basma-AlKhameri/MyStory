@@ -4,8 +4,11 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    buildFeatures {
+        viewBinding = true
+    }
 
+    compileSdk 31
     defaultConfig {
         applicationId "com.example.mystory"
         minSdk 21
