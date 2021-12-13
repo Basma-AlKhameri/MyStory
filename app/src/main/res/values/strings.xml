@@ -3,5 +3,8 @@
     <string name="HintUserName">UserName</string>
     <string name="HintPass">Password</string>
     <string name="ButtonText">Login</string>
+    <string name="open">open</string>
+    <string name="close">close</string>
+
     <string name="checkText">I accept terms and condition</string>
 </resources>

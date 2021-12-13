@@ -1,5 +1,6 @@
 package com.example.mystory
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
@@ -15,7 +16,9 @@ class LoginiActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
         login()
+        //checkFields()
     }
+
 
     private fun login() {
         var UserArray:ArrayList<User> = ArrayList()
@@ -31,14 +34,25 @@ class LoginiActivity : AppCompatActivity() {
 
             for(uA in UserArray){
                 if(uA.Email == user.Email && uA.pass== user.pass){
-                    Toast.makeText(this,"welcome", Toast.LENGTH_SHORT).show()
+                    finish()
+                   // Toast.makeText(this,"welcome", Toast.LENGTH_SHORT).show()
+                   val i=  Intent(this, MainActivity::class.java)
+                    i.putExtra("email", user.Email)
+                    startActivity(i)
                     break
                 }else{
                     Toast.makeText(this,"check your data", Toast.LENGTH_SHORT).show()
                 }
         }
-
         }
-
+    }
+    private fun checkFields() {
+        binding.loginButton.setOnClickListener {
+            if(binding.UserName.text.isEmpty()){
+                binding.UserName.error = "enter your email"
+            }else if (binding.pass.text.isEmpty()){
+                binding.pass.error=("enter your password")
+            }
+        }
     }
 }
