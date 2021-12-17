@@ -18,7 +18,6 @@ private lateinit var binding: ActivityMainBinding
         binding = ActivityMainBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
-
         val email = intent.getStringExtra("email")
 
         setSupportActionBar(binding.toolbar)
@@ -26,6 +25,30 @@ private lateinit var binding: ActivityMainBinding
         setUpDrawer()
         updateEmailInHeader(email)
         drawerClicks()
+        openAddStoryActivity()
+        displayStory()
+    }
+
+    private fun displayStory() {
+        val storyArray= ArrayList<Story>()
+        storyArray.add(Story("this is first Story"," this is subTitle",
+        "welcome to my story"))
+
+        storyArray.add(Story("this is second Story"," this is second subTitle",
+            "welcome to my story"))
+
+        storyArray.add(Story("this is third Story"," this is third subTitle",
+            "welcome to my story"))
+
+        val customAdapter= CustomAdapter(storyArray,this)
+        binding.recyclerview.adapter=customAdapter
+    }
+
+    private fun openAddStoryActivity() {
+        binding.floatinBbutton.setOnClickListener {
+            val i =Intent(this,AddStoryActivity::class.java )
+            startActivity(i)
+        }
     }
 
     private fun drawerClicks() {

@@ -3,9 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/MyStory/app/src/main/res/drawable/bakcground_header.xml" value="0.1935185185185185" />
+        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/MyStory/app/src/main/res/drawable/header_background.xml" value="0.1935185185185185" />
+        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/MyStory/app/src/main/res/layout/activity_add_story.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/MyStory/app/src/main/res/layout/activity_logini.xml" value="0.15" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/MyStory/app/src/main/res/layout/activity_main.xml" value="0.1716485507246377" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/MyStory/app/src/main/res/layout/activity_splash.xml" value="0.11820652173913043" />
+        <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/MyStory/app/src/main/res/layout/custom_layout.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/MyStory/app/src/main/res/layout/nav_header.xml" value="0.22" />
         <entry key="..\:/Users/TOSHIBA/AndroidStudioProjects/MyStory/app/src/main/res/menu/drawer_item.xml" value="0.2" />
       </map>

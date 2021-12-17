@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#eee9fa">
+    android:background="@drawable/header_background">
 
     <ImageView
         android:id="@+id/imageView"
@@ -24,8 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="24dp"
-        android:text="TextView"
-        android:textColor="#642CC3"
+        android:text="Basma"
+        android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView" />
@@ -38,7 +38,7 @@
         android:layout_marginTop="24dp"
         android:layout_marginBottom="24dp"
         android:text="TextView"
-        android:textColor="#642CC3"
+        android:textColor="@color/white"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView"
