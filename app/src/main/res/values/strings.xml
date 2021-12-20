@@ -7,4 +7,8 @@
     <string name="close">close</string>
 
     <string name="checkText">I accept terms and condition</string>
+    <string name="enter_title">Add title here</string>
+    <string name="enter_subtitle">Add sub title here</string>
+    <string name="add_button">Add story</string>
+    <string name="add_description">Add Description</string>
 </resources>
