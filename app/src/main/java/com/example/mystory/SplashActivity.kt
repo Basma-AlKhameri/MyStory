@@ -17,7 +17,7 @@ class SplashActivity : AppCompatActivity() {
     private fun moveToLoginScreen() {
         Handler(Looper.myLooper()!!).postDelayed({
             finish()
-            var i = Intent(this,LoginiActivity::class.java )
+            var i = Intent(this,SignInActivity::class.java )
             startActivity(i)
         },3000
 

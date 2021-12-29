@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginiActivity">
+    tools:context=".SignInActivity">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
     <EditText
-        android:id="@+id/UserName"
+        android:id="@+id/email_signIn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -36,7 +36,7 @@
         app:layout_constraintTop_toBottomOf="@id/LoginImage" />
 
     <EditText
-        android:id="@+id/pass"
+        android:id="@+id/pass_signIn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -46,36 +46,41 @@
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/UserName" />
+        app:layout_constraintTop_toBottomOf="@id/email_signIn" />
+    <TextView
+        android:id="@+id/forgetPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Forget Password?"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@id/pass_signIn"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/loginButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="#7E55C6"
         android:text="@string/ButtonText"
-        app:layout_constraintTop_toBottomOf="@id/pass" />
+        app:layout_constraintTop_toBottomOf="@id/forgetPass" />
+
+
 
     <TextView
-        android:id="@+id/forgetText"
+        android:id="@+id/goSignUp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Forget Password?"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@id/loginButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <CheckBox
-        android:id="@+id/CheckBox"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:text="@string/checkText"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="10dp"
+        android:text="Don't have an account? Sign up"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/forgetText" />
+        app:layout_constraintTop_toBottomOf="@id/loginButton"
+
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "151612981282",
+    "project_id": "mystory-f2832",
+    "storage_bucket": "mystory-f2832.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:151612981282:android:be5efe5707f6f279910a7b",
+        "android_client_info": {
+          "package_name": "com.basmaalkhameri.mystory"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "151612981282-0nnvgtda7hbuof867ipqjn45h7nmbn1f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC4bgVlXu6JIYhctWSUFEGgYVx6dQFPwCw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "151612981282-0nnvgtda7hbuof867ipqjn45h7nmbn1f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

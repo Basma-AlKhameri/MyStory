@@ -7,53 +7,80 @@ import android.view.MenuItem
 import android.widget.TextView
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
-import com.example.mystory.databinding.ActivityLoginiBinding
+import com.example.mystory.DataClass.Story
 import com.example.mystory.databinding.ActivityMainBinding
+import com.google.firebase.auth.FirebaseAuth
 import java.lang.RuntimeException
 
 class MainActivity : AppCompatActivity(){
 private lateinit var binding: ActivityMainBinding
+    lateinit var auth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
-        val view = binding.root
-        setContentView(view)
+        setContentView(binding.root)
+
+        auth = FirebaseAuth.getInstance()
+
         val email = intent.getStringExtra("email")
 
         setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         setUpDrawer()
-        try{
-            updateEmailInHeader(email)
-        }catch (e:RuntimeException){
+
+        try {
+            updateEmailInHeader(email!!)
+        } catch (e:RuntimeException){
             "error"
         }
         drawerClicks()
         openAddStoryActivity()
         displayStory()
-    }
+    } //end fun onCreate
+
+    override fun onStart() {
+        super.onStart()
+        if (auth.currentUser==null){
+            startActivity(Intent(this, SignInActivity::class.java))
+            finish()
+        }
+    } //end fun onStart
 
     private fun displayStory() {
         val storyArray= ArrayList<Story>()
-        storyArray.add(Story("Android studio"," first week",
-        "Android Studio \n is the official integrated development environment (IDE) for Android application development." +
-                "\n It is based on the IntelliJ IDEA, a Java integrated development environment for software, and incorporates its code editing and developer tools.\n" +
-                "\n To support application development within the Android operating system, Android Studio uses a Gradle-based build system, emulator, code templates, and Github integration." +
-                " \n Every project in Android Studio has one or more modalities with source code and resource files. These modalities include Android app modules, Library modules, and Google App Engine modules.\n" +
-                "\n Android Studio uses an Instant Push feature to push code and resource changes to a running application. A code editor assists the developer with writing code and offering code completion, refraction, and analysis." +
-                " Applications built in Android Studio are then compiled into the APK format for submission to the Google Play Store.\n")
+        storyArray.add(
+            Story("Astronaut Annie"," first story",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit,\n" +
+                "            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n" +
+                "            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi\n" +
+                "            ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in\n" +
+                "            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint\n" +
+                "            occaecat cupidatat non proident,sunt in culpa qui officia deserunt mollit anim id est laborum \n " +
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit,\n" +
+                "            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.\n" +
+                "            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi\n" +
+                "            ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in\n" +
+                "            voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint\n" +
+                "            occaecat cupidatat non proident,sunt in culpa qui officia deserunt mollit anim id est laborum")
+        )
+        storyArray.add(
+            Story("the Night Knights"," second story",
+            "welcome to my story")
         )
 
-
-        storyArray.add(Story("OOP and classes"," second week",
-            "welcome to my story"))
-
-        storyArray.add(Story("ui Design"," third week",
-            "welcome to my story"))
-        storyArray.add(Story("Activities and fragments"," fourth week",
-            "welcome to my story"))
-
+        storyArray.add(
+            Story("Pillowland"," third story",
+            "welcome to my story")
+        )
+        storyArray.add(
+            Story("sleep My Bunny"," fourth story",
+            "welcome to my story")
+        )
+        storyArray.add(
+            Story("Tomorrow I will be Brave"," fifth story",
+            "welcome to my story")
+        )
         val customAdapter= CustomAdapter(storyArray,this)
         binding.recyclerview.adapter=customAdapter
         if(intent.getStringExtra("title")!=null ){
@@ -64,8 +91,6 @@ private lateinit var binding: ActivityMainBinding
             val newStory= Story(title!!,subtitle!!, desc!!)
             storyArray.add(newStory)
             customAdapter.notifyDataSetChanged()
-
-
         }
     }
 
@@ -80,14 +105,14 @@ private lateinit var binding: ActivityMainBinding
         binding.navigation.setNavigationItemSelectedListener {
             when (it.itemId){
                 R.id.home-> {
-
                     binding.drawer.closeDrawer(GravityCompat.START)
                     true
                     }
                 R.id.logout -> {
                     finish()
-                    val i= Intent(this, LoginiActivity::class.java)
-                    startActivity(i)
+                    FirebaseAuth.getInstance().signOut()
+                    startActivity(Intent(this, SignInActivity::class.java))
+
                     true
                 }
                 else -> true
